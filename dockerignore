@@ -1,0 +1,11 @@
+.git
+.gitignore
+.env
+.env.*
+!.env.example
+README.md
+tmp/
+log/
+storage/
+spec/examples.txt
+.rspec_status
