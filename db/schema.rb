@@ -10,8 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 0) do
+ActiveRecord::Schema[8.1].define(version: 2026_08_29_055937) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
+  create_table "locations", force: :cascade do |t|
+    t.string "city"
+    t.string "continent_name"
+    t.string "country_code"
+    t.string "country_name"
+    t.datetime "created_at", null: false
+    t.string "ip", null: false
+    t.string "ip_type"
+    t.decimal "latitude", precision: 10, scale: 6
+    t.decimal "longitude", precision: 10, scale: 6
+    t.string "query", null: false
+    t.string "query_type", null: false
+    t.string "region_name"
+    t.datetime "updated_at", null: false
+    t.string "zip"
+    t.index ["ip"], name: "index_locations_on_ip"
+    t.index ["query"], name: "index_locations_on_query", unique: true
+  end
 end
