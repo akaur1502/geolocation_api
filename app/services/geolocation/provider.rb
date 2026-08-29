@@ -5,4 +5,4 @@ module Geolocation
         raise NotImplementedError, "#{self.class} must implement #fetch"
       end
     end
-  end
+end
