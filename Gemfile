@@ -1,9 +1,12 @@
 source "https://rubygems.org"
 
+ruby "3.3.6"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.1.3", ">= 8.1.3.1"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
+# Serialize responses in JSON:API format
+gem "jsonapi-serializer"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
@@ -47,4 +50,15 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  # Testing framework
+  gem "rspec-rails"
+
+  # Test data factories
+  gem "factory_bot_rails"
+end
+
+group :test do
+  # Stub external HTTP requests in tests (no real network calls)
+  gem "webmock"
 end
