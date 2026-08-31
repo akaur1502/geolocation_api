@@ -162,8 +162,6 @@ docker compose run -e RAILS_ENV=test web bin/rails db:test:prepare
 # Run the suite
 docker compose run web bundle exec rspec
 
-# Or locally (requires local PostgreSQL and `bundle install`)
-bundle exec rspec
 ```
 
 Tests stub the external provider (no real network calls), so the suite is fast
