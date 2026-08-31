@@ -157,6 +157,9 @@ provider failure.
 
 ```bash
 # In Docker
+# One-time: set up the test database (schema only, no seed data)
+docker compose run -e RAILS_ENV=test web bin/rails db:test:prepare
+# Run the suite
 docker compose run web bundle exec rspec
 
 # Or locally (requires local PostgreSQL and `bundle install`)
